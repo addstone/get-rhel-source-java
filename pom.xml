@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.soucod.getrhelsourcejava</groupId>
+    <artifactId>get-rhel-source-java</artifactId>
+    <version>0.0.0.1-SNAPSHOT</version>
+
+    <properties>
+        <!-- JavaFX 版本号 -->
+        <javafx.version>8</javafx.version>
+        <jdk.version>8</jdk.version>
+        <!-- 编译时的编码 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <!-- Maven 编译时的 JDK 版本-->
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <!-- 项目编码格式 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <vertx.version>3.9.0</vertx.version>
+        <maven-compiler-plugin>3.8.1</maven-compiler-plugin>
+        <javafx-maven-plugin>0.0.4</javafx-maven-plugin>
+
+        <spine-libgdx.version>3.5.51.1</spine-libgdx.version>
+        <spine-libgdx-SNAPSHOT.version>3.5.51.2-SNAPSHOT</spine-libgdx-SNAPSHOT.version>
+        <gdx.version>1.9.10</gdx.version>
+
+        <client.plugin.version>0.1.25-SNAPSHOT</client.plugin.version>
+        <mainClassName>com.soucod.eternal.life.biography.ice.demons.MainApp</mainClassName>
+
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.soucod.getrhelsourcejava.service.Main</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
